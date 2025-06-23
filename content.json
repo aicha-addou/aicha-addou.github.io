@@ -2,36 +2,185 @@
   "title": {
     "fr": "Portfolio de Aicha Addou",
     "en": "Aicha Addou's Portfolio",
-    "zh": "艾莎·阿杜的作品集"
+    "zh": "作品集",
+    "ar": "ملف أعمال عائشة أدو"
+  },
+  "sections": {
+    "presentation": {
+      "fr": "Présentation",
+      "en": "Profile",
+      "zh": "介绍",
+      "ar": "من أنا"
+    },
+    "skills": {
+      "fr": "Compétences",
+      "en": "Skills",
+      "zh": "技能",
+      "ar": "المهارات"
+    },
+    "projects": {
+      "fr": "Projets",
+      "en": "Projects",
+      "zh": "真主",
+      "ar": "المشاريع"
+    },
+    "experience": {
+      "fr": "Expérience professionnelle",
+      "en": "Work Experience",
+      "zh": "工作经验",
+      "ar": "الخبرات العملية"
+    },
+    "engagement": {
+      "fr": "Engagement associatif",
+      "en": "Community Involvement",
+      "zh": "社团参与",
+      "ar": "المشاركة المجتمعية"
+    },
+    "video": {
+      "fr": "Vidéo de présentation",
+      "en": "Presentation Video",
+      "zh": "介绍视频",
+      "ar": "فيديو تقديمي"
+    }
   },
   "intro": {
-    "fr": "Je suis Aicha Addou, étudiante en 1re année du cycle ingénieur à Sup Galilée (Université Paris 13). Je recherche un contrat d’apprentissage de 24 mois en data science à partir de septembre 2024.",
-    "en": "I am Aicha Addou, a first-year engineering student at Sup Galilée (University of Paris 13). I am seeking a 24-month apprenticeship in data science starting in September 2024.",
-    "zh": "我是艾莎·阿杜，巴黎第十三大学 Sup Galilée 工程第一年学生。自2024年9月起，我正在寻找为期24个月的数据科学学徒合同。"
+    "fr": [
+      "Étudiante en informatique à Sup Galilée (Université Paris 13)",
+      "À la recherche d’un contrat d’apprentissage en Data Science (24 mois)",
+      "Disponible à partir de septembre 2024"
+    ],
+    "en": [
+      "Computer science student at Sup Galilée (University of Paris 13)",
+      "Looking for a 24-month apprenticeship in Data Science",
+      "Available from September 2024"
+    ],
+    "zh": [
+      "巴黎第十三大学 Sup Galilée 计算机专业学生",
+      "希望获得 24 个月的数据科学实习合同",
+      "2024年9月起可用"
+    ],
+    "ar": [
+      "طالبة في علوم الحاسوب في Sup Galilée (جامعة باريس 13)",
+      "أبحث عن عقد تدريب في علم البيانات لمدة 24 شهرًا",
+      "متاحة ابتداءً من سبتمبر 2024"
+    ]
   },
   "skills": {
-    "fr": "Compétences : C, Python, Matlab, SQL, Java, HTML/CSS, JavaScript, React, Docker, MIPS, JQuery, UML, OCL, Scrum, Git, Excel, LaTeX, Pack Office.",
-    "en": "Skills: C, Python, Matlab, SQL, Java, HTML/CSS, JavaScript, React, Docker, MIPS, JQuery, UML, OCL, Scrum, Git, Excel, LaTeX, Office Suite.",
-    "zh": "技能：C、Python、Matlab、SQL、Java、HTML/CSS、JavaScript、React、Docker、MIPS、JQuery、UML、OCL、Scrum、Git、Excel、LaTeX、Office 套件。"
+    "fr": [
+      "Langages : Python, C, Java, SQL, JavaScript",
+      "Technologies : React, Docker, HTML/CSS, Git",
+      "Outils : Excel, LaTeX, VS Code, UML, OCL",
+      "Méthodologies : Agile, Scrum",
+      "Soft Skills : rigueur, travail d’équipe, communication"
+    ],
+    "en": [
+      "Languages: Python, C, Java, SQL, JavaScript",
+      "Technologies: React, Docker, HTML/CSS, Git",
+      "Tools: Excel, LaTeX, VS Code, UML, OCL",
+      "Methodologies: Agile, Scrum",
+      "Soft Skills: precision, teamwork, communication"
+    ],
+    "zh": [
+      "编程语言：Python、C、Java、SQL、JavaScript",
+      "技术栈：React、Docker、HTML/CSS、Git",
+      "工具：Excel、LaTeX、VS Code、UML、OCL",
+      "方法论：敏捷开发、Scrum",
+      "软技能：认真、团队协作、沟通能力"
+    ],
+    "ar": [
+      "اللغات: Python، C، Java، SQL، JavaScript",
+      "التقنيات: React، Docker، HTML/CSS، Git",
+      "الأدوات: Excel، LaTeX، VS Code، UML، OCL",
+      "المنهجيات: أجايل، سكرم",
+      "المهارات الشخصية: الدقة، العمل الجماعي، التواصل"
+    ]
   },
   "projects": {
-    "fr": "Projets : site d’annonces immobilières (React, Python), optimisation logique (Python, Docker), jeu de l’oie (Java), Puissance 4 avec IA (C), chiffrement (C), site web (HTML/CSS).",
-    "en": "Projects: real estate listings website (React, Python), logic optimization (Python, Docker), Goose game (Java), Connect 4 with AI (C), encryption (C), website (HTML/CSS).",
-    "zh": "项目：房地产网站（React、Python）、逻辑优化（Python、Docker）、大富翁游戏（Java）、带人工智能的四子棋（C）、加密工具（C）、网站设计（HTML/CSS）。"
+    "fr": [
+      "Plateforme immobilière – React & Python (chef d’équipe)",
+      "Optimisation logique – Outil Dockerisé pour les fonctions booléennes",
+      "Jeu de l’oie & Puissance 4 IA – Implémentation en C/Java",
+      "Outil de chiffrement classique – Interface simple en C",
+      "Mini-portfolio Web – HTML/CSS, multilingue avec JSON"
+    ],
+    "en": [
+      "Real estate platform – React & Python (team leader)",
+      "Logic optimization – Dockerized tool for Boolean functions",
+      "Goose game & Connect 4 AI – Implemented in C/Java",
+      "Classic encryption tool – C-based user interface",
+      "Mini multilingual web portfolio – HTML/CSS with JSON"
+    ],
+    "zh": [
+      "房地产平台 – 使用 React 和 Python 开发（项目负责人）",
+      "逻辑优化工具 – 基于 Docker 的布尔函数优化",
+      "大富翁与四子棋游戏（含 AI）– 使用 C/Java 实现",
+      "加密工具 – 基于 C 的用户界面",
+      "多语言个人网站 – HTML/CSS + JSON"
+    ],
+    "ar": [
+      "منصة عقارية – React و Python (قائدة الفريق)",
+      "أداة تحسين منطقية – باستخدام Docker للوظائف المنطقية",
+      "ألعاب: لعبة الحياة، لعبة أربعة في صف – بلغة C و Java",
+      "أداة تشفير كلاسيكية – بواجهة بسيطة بلغة C",
+      "موقع تعريفي متعدد اللغات – HTML/CSS مع JSON"
+    ]
   },
   "experience": {
-    "fr": "Expérience : rédactrice web chez Nucleus et CorpoSmart, rédaction SEO, animation d’événements, 3 articles/jour.",
-    "en": "Experience: web writer at Nucleus and CorpoSmart, SEO writing, event animation, 3 articles/day.",
-    "zh": "经验：在 Nucleus 和 CorpoSmart 担任网页撰稿人，SEO写作，活动主持，每天撰写3篇文章。"
+    "fr": [
+      "Rédactrice web – Nucleus & CorpoSmart (2022–2023)",
+      "Rédaction d’articles SEO optimisés (3 par jour)",
+      "Animation de stands et participation à des événements",
+      "Travail en collaboration avec l’équipe marketing"
+    ],
+    "en": [
+      "Web writer – Nucleus & CorpoSmart (2022–2023)",
+      "Wrote 3 SEO-optimized articles daily",
+      "Hosted stands and participated in public events",
+      "Collaborated with marketing teams"
+    ],
+    "zh": [
+      "网页撰稿人 – Nucleus 与 CorpoSmart（2022–2023）",
+      "每日撰写3篇SEO优化文章",
+      "参加并主持公司活动展台",
+      "与市场部门合作"
+    ],
+    "ar": [
+      "كاتبة محتوى – Nucleus و CorpoSmart (2022–2023)",
+      "كتابة 3 مقالات يوميًا بتحسين SEO",
+      "تنشيط الأجنحة خلال الفعاليات",
+      "العمل ضمن فريق التسويق"
+    ]
   },
   "engagement": {
-    "fr": "Engagement : membre active d’ETIC CLUB et du BDE Sup Galilée (événementiel, RH, production audiovisuelle).",
-    "en": "Involvement: active member of ETIC CLUB and the Sup Galilée student union (event planning, HR, audiovisual production).",
-    "zh": "参与：ETIC CLUB 和 Sup Galilée 学生会的活跃成员（活动策划、人力资源、视听制作）。"
+    "fr": [
+      "Responsable événementiel – ETIC CLUB",
+      "Supervision de 80 membres pour le Salon de l'emploi",
+      "Stratégie de communication, création de contenu visuel",
+      "Responsable RH – BDE Sup Galilée"
+    ],
+    "en": [
+      "Event lead – ETIC CLUB",
+      "Managed 80 members for the Job Fair",
+      "Communication strategy and visual content creation",
+      "HR lead – Sup Galilée Student Union"
+    ],
+    "zh": [
+      "活动负责人 – ETIC CLUB",
+      "协调80人参与职业博览会组织",
+      "制定传播策略与内容创作",
+      "人力资源负责人 – Sup Galilée 学生会"
+    ],
+    "ar": [
+      "مسؤولة الفعاليات – نادي ETIC",
+      "تنظيم معرض التوظيف بمشاركة 80 عضوًا",
+      "تصميم استراتيجية الاتصال وإنشاء المحتوى",
+      "رئيسة الموارد البشرية – BDE Sup Galilée"
+    ]
   },
   "video": {
     "fr": "https://www.youtube.com/embed/VIDEO_ID_FR",
     "en": "https://www.youtube.com/embed/VIDEO_ID_EN",
-    "zh": "https://www.youtube.com/embed/VIDEO_ID_ZH"
+    "zh": "https://www.youtube.com/embed/VIDEO_ID_ZH",
+    "ar": "https://www.youtube.com/embed/VIDEO_ID_AR"
   }
 }
