@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio multilingue</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="alternate" href="index.html?lang=fr" hreflang="fr" />
+    <link rel="alternate" href="index.html?lang=en" hreflang="en" />
+    <link rel="alternate" href="index.html?lang=zh" hreflang="zh" />
+</head>
+<body>
+    <div class="lang-switch">
+        <button onclick="setLang('fr')">🇫🇷</button>
+        <button onclick="setLang('en')">🇬🇧</button>
+        <button onclick="setLang('zh')">🇨🇳</button>
+    </div>
+
+    <h1 id="header"></h1>
+    <p id="description"></p>
+
+    <iframe src="video/video.html" width="560" height="315"></iframe>
+
+    <script src="script.js"></script>
+</body>
+</html>
