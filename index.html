@@ -2,24 +2,29 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <title>Portfolio multilingue</title>
+    <title id="title">Portfolio</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="alternate" href="index.html?lang=fr" hreflang="fr" />
-    <link rel="alternate" href="index.html?lang=en" hreflang="en" />
-    <link rel="alternate" href="index.html?lang=zh" hreflang="zh" />
+    <link rel="alternate" hreflang="en" href="?lang=en"/>
+    <link rel="alternate" hreflang="fr" href="?lang=fr"/>
+    <link rel="alternate" hreflang="zh" href="?lang=zh"/>
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <div class="lang-switch">
-        <button onclick="setLang('fr')">🇫🇷</button>
-        <button onclick="setLang('en')">🇬🇧</button>
-        <button onclick="setLang('zh')">🇨🇳</button>
-    </div>
+    <nav id="lang-switcher">
+        <button data-lang="fr">🇫🇷</button>
+        <button data-lang="en">🇬🇧</button>
+        <button data-lang="zh">🇨🇳</button>
+    </nav>
 
     <h1 id="header"></h1>
     <p id="description"></p>
 
-    <iframe src="video/video.html" width="560" height="315"></iframe>
+    <div vocab="http://schema.org/" typeof="Person">
+      <span property="name">Jean Dupont</span> –
+      <span property="jobTitle">Étudiant en informatique</span> à
+      <span property="affiliation">Sup Galilée</span>.
+    </div>
 
-    <script src="script.js"></script>
+    <iframe id="video-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
 </body>
 </html>
