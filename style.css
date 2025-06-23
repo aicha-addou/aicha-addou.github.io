@@ -1,16 +1,124 @@
+/* --- Base --- */
 body {
-    font-family: sans-serif;
-    padding: 2em;
-    line-height: 1.6;
-}
-#lang-switcher {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-}
-#lang-switcher button {
-    margin-left: 5px;
-    font-size: 1.2em;
-    cursor: pointer;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #fdfdfd;
+  color: #222;
+  margin: 0;
+  padding: 0;
+  line-height: 1.7;
+  transition: all 0.3s ease;
 }
 
+/* --- Direction RTL support --- */
+html[dir="rtl"] {
+  direction: rtl;
+}
+html[dir="rtl"] section h2 {
+  border-left: none;
+  border-right: 5px solid #006699;
+  padding-left: 0;
+  padding-right: 10px;
+}
+html[dir="rtl"] ul {
+  padding-left: 0;
+  padding-right: 20px;
+}
+
+/* --- Barre de langue --- */
+#lang-switcher {
+  position: fixed;
+  top: 10px;
+  right: 15px;
+  z-index: 100;
+}
+#lang-switcher button {
+  background: white;
+  border: 1px solid #aaa;
+  margin-left: 5px;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1.1em;
+}
+#lang-switcher button:hover {
+  background-color: #eee;
+}
+
+/* --- En-tête --- */
+.profile-header {
+  text-align: center;
+  background: linear-gradient(135deg, #e0f7fa, #f8f9fa);
+  padding: 40px 20px 20px;
+  border-bottom: 1px solid #ddd;
+}
+#profile-pic {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #0077cc;
+  object-fit: cover;
+  margin-bottom: 15px;
+}
+
+/* --- Contenu principal --- */
+main {
+  max-width: 900px;
+  margin: auto;
+  padding: 40px 20px;
+}
+section {
+  margin-bottom: 50px;
+}
+section h2 {
+  font-size: 1.6em;
+  color: #0077cc;
+  border-left: 5px solid #0077cc;
+  padding-left: 10px;
+  margin-bottom: 15px;
+}
+ul {
+  list-style-type: disc;
+  padding-left: 30px;
+  margin: 0;
+}
+li {
+  margin-bottom: 10px;
+  font-size: 1.05em;
+}
+
+/* --- Vidéo --- */
+iframe {
+  width: 100%;
+  max-width: 100%;
+  height: 315px;
+  border: none;
+}
+
+/* --- Pied de page --- */
+footer {
+  background-color: #f0f0f0;
+  text-align: center;
+  font-size: 0.9em;
+  padding: 20px;
+  border-top: 1px solid #ddd;
+  color: #666;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+  #profile-pic {
+    width: 100px;
+    height: 100px;
+  }
+  section h2 {
+    font-size: 1.3em;
+  }
+  #lang-switcher {
+    top: 5px;
+    right: 5px;
+  }
+  #lang-switcher button {
+    font-size: 1em;
+    padding: 4px 8px;
+  }
+}
