@@ -1,29 +1,76 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
-    <meta charset="UTF-8">
-    <title id="title">Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="alternate" hreflang="en" href="?lang=en"/>
-    <link rel="alternate" hreflang="fr" href="?lang=fr"/>
-    <link rel="alternate" hreflang="zh" href="?lang=zh"/>
-    <script src="script.js" defer></script>
+  <meta charset="UTF-8">
+  <title id="title">Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="alternate" hreflang="fr" href="?lang=fr" />
+  <link rel="alternate" hreflang="en" href="?lang=en" />
+  <link rel="alternate" hreflang="zh" href="?lang=zh" />
+  <link rel="alternate" hreflang="ar" href="?lang=ar" />
+  <script src="script.js" defer></script>
 </head>
 <body>
-    <nav id="lang-switcher">
-        <button data-lang="fr">🇫🇷</button>
-        <button data-lang="en">🇬🇧</button>
-        <button data-lang="zh">🇨🇳</button>
-    </nav>
+  <!-- Sélecteur de langue -->
+  <nav id="lang-switcher">
+    <button data-lang="fr">🇫🇷</button>
+    <button data-lang="en">🇬🇧</button>
+    <button data-lang="zh">🇨🇳</button>
+    <button data-lang="ar">🇸🇦</button>
+  </nav>
 
+  <!-- En-tête avec photo -->
+  <header class="profile-header">
+    <img src="profile.jpg" alt="Photo de profil" id="profile-pic">
     <h1 id="header"></h1>
-    <p id="description"></p>
+  </header>
 
+  <main>
+    <!-- Présentation -->
+    <section>
+      <h2 id="section-presentation-title"></h2>
+      <ul id="intro"></ul>
+    </section>
+
+    <!-- Compétences -->
+    <section>
+      <h2 id="section-skills-title"></h2>
+      <ul id="skills"></ul>
+    </section>
+
+    <!-- Projets -->
+    <section>
+      <h2 id="section-projects-title"></h2>
+      <ul id="projects"></ul>
+    </section>
+
+    <!-- Expérience -->
+    <section>
+      <h2 id="section-experience-title"></h2>
+      <ul id="experience"></ul>
+    </section>
+
+    <!-- Engagement -->
+    <section>
+      <h2 id="section-engagement-title"></h2>
+      <ul id="engagement"></ul>
+    </section>
+
+    <!-- Vidéo -->
+    <section>
+      <h2 id="section-video-title"></h2>
+      <iframe id="video-frame" width="560" height="315" frameborder="0" allowfullscreen></iframe>
+    </section>
+  </main>
+
+
+
+  <footer>
     <div vocab="http://schema.org/" typeof="Person">
-      <span property="name">Jean Dupont</span> –
-      <span property="jobTitle">Étudiant en informatique</span> à
+      <span property="name">Aicha Addou</span> –
+      <span property="jobTitle">Étudiante en informatique</span> à
       <span property="affiliation">Sup Galilée</span>.
     </div>
-
+  </footer>
 </body>
 </html>
