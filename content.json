@@ -1,18 +1,33 @@
 {
   "title": {
-    "fr": "Portfolio de Jean Dupont",
-    "en": "Jean Dupont's Portfolio",
-    "zh": "让-杜邦的作品集"
+    "fr": "Portfolio de Aicha Addou",
+    "en": "Aicha Addou's Portfolio",
+    "zh": "艾莎·阿杜的作品集"
   },
-  "header": {
-    "fr": "Bienvenue sur mon portfolio",
-    "en": "Welcome to my portfolio",
-    "zh": "欢迎来到我的作品集"
+  "intro": {
+    "fr": "Je suis Aicha Addou, étudiante en 1re année du cycle ingénieur à Sup Galilée (Université Paris 13). Je recherche un contrat d’apprentissage de 24 mois en data science à partir de septembre 2024.",
+    "en": "I am Aicha Addou, a first-year engineering student at Sup Galilée (University of Paris 13). I am seeking a 24-month apprenticeship in data science starting in September 2024.",
+    "zh": "我是艾莎·阿杜，巴黎第十三大学 Sup Galilée 工程第一年学生。自2024年9月起，我正在寻找为期24个月的数据科学学徒合同。"
   },
-  "description": {
-    "fr": "Je suis étudiant en informatique à Sup Galilée.",
-    "en": "I am a computer science student at Sup Galilée.",
-    "zh": "我是在Sup Galilée学习计算机的学生。"
+  "skills": {
+    "fr": "Compétences : C, Python, Matlab, SQL, Java, HTML/CSS, JavaScript, React, Docker, MIPS, JQuery, UML, OCL, Scrum, Git, Excel, LaTeX, Pack Office.",
+    "en": "Skills: C, Python, Matlab, SQL, Java, HTML/CSS, JavaScript, React, Docker, MIPS, JQuery, UML, OCL, Scrum, Git, Excel, LaTeX, Office Suite.",
+    "zh": "技能：C、Python、Matlab、SQL、Java、HTML/CSS、JavaScript、React、Docker、MIPS、JQuery、UML、OCL、Scrum、Git、Excel、LaTeX、Office 套件。"
+  },
+  "projects": {
+    "fr": "Projets : site d’annonces immobilières (React, Python), optimisation logique (Python, Docker), jeu de l’oie (Java), Puissance 4 avec IA (C), chiffrement (C), site web (HTML/CSS).",
+    "en": "Projects: real estate listings website (React, Python), logic optimization (Python, Docker), Goose game (Java), Connect 4 with AI (C), encryption (C), website (HTML/CSS).",
+    "zh": "项目：房地产网站（React、Python）、逻辑优化（Python、Docker）、大富翁游戏（Java）、带人工智能的四子棋（C）、加密工具（C）、网站设计（HTML/CSS）。"
+  },
+  "experience": {
+    "fr": "Expérience : rédactrice web chez Nucleus et CorpoSmart, rédaction SEO, animation d’événements, 3 articles/jour.",
+    "en": "Experience: web writer at Nucleus and CorpoSmart, SEO writing, event animation, 3 articles/day.",
+    "zh": "经验：在 Nucleus 和 CorpoSmart 担任网页撰稿人，SEO写作，活动主持，每天撰写3篇文章。"
+  },
+  "engagement": {
+    "fr": "Engagement : membre active d’ETIC CLUB et du BDE Sup Galilée (événementiel, RH, production audiovisuelle).",
+    "en": "Involvement: active member of ETIC CLUB and the Sup Galilée student union (event planning, HR, audiovisual production).",
+    "zh": "参与：ETIC CLUB 和 Sup Galilée 学生会的活跃成员（活动策划、人力资源、视听制作）。"
   },
   "video": {
     "fr": "https://www.youtube.com/embed/VIDEO_ID_FR",
