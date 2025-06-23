@@ -1,1 +1,16 @@
+body {
+    font-family: sans-serif;
+    padding: 2em;
+    line-height: 1.6;
+}
+#lang-switcher {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+}
+#lang-switcher button {
+    margin-left: 5px;
+    font-size: 1.2em;
+    cursor: pointer;
+}
 
