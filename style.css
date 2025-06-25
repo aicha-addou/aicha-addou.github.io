@@ -122,3 +122,11 @@ footer {
     padding: 4px 8px;
   }
 }
+
+.video-hint {
+  font-style: italic;
+  font-size: 0.95em;
+  color: #555;
+  margin: 0 0 10px 0;
+}
+

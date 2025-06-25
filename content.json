@@ -178,9 +178,9 @@
     ]
   },
   "video": {
-    "fr": "https://www.youtube.com/embed/VIDEO_ID_FR",
-    "en": "https://www.youtube.com/embed/VIDEO_ID_EN",
-    "zh": "https://www.youtube.com/embed/VIDEO_ID_ZH",
-    "ar": "https://www.youtube.com/embed/VIDEO_ID_AR"
+    "fr": "https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?cc_load_policy=1&cc_lang_pref=fr",
+    "en": "https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?cc_load_policy=1&cc_lang_pref=en",
+    "zh": "https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?cc_load_policy=1&cc_lang_pref=zh",
+    "ar": "https://www.youtube-nocookie.com/embed/M7lc1UVf-VE?cc_load_policy=1&cc_lang_pref=ar"
   }
 }
