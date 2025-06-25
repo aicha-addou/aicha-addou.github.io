@@ -1,0 +1,1706 @@
+WEBVTT
+
+00:00:10.240 --> 00:00:12.080
+Salut tout le monde, bienvenue à l'
+
+00:00:12.080 --> 00:00:14.480
+émission YouTube Developers Live de cette semaine. Je suis Jeff
+
+00:00:14.480 --> 00:00:16.320
+Posnik, je viens de New York.
+
+00:00:16.320 --> 00:00:17.800
+Je suis membre de l'
+
+00:00:17.800 --> 00:00:20.199
+équipe des relations avec les développeurs et cette semaine, je suis
+
+00:00:20.199 --> 00:00:21.680
+ravi de vous parler des différentes
+
+00:00:21.680 --> 00:00:24.560
+manières de personnaliser le lecteur intégré YouTube.
+
+00:00:24.560 --> 00:00:26.679
+Avant de commencer, je
+
+00:00:26.679 --> 00:00:29.160
+voudrais vous donner quelques règles de base pour
+
+00:00:29.160 --> 00:00:30.920
+aborder le sujet de l'
+
+00:00:30.920 --> 00:00:32.719
+émission d'aujourd'hui. Il existe de nombreux
+
+00:00:32.719 --> 00:00:34.040
+lecteurs intégrés différents et de
+
+00:00:34.040 --> 00:00:35.559
+nombreuses façons de
+
+00:00:35.559 --> 00:00:37.760
+les personnaliser. Pour cette
+
+00:00:37.760 --> 00:00:40.200
+émission en particulier, nous allons nous concentrer sur la
+
+00:00:40.200 --> 00:00:43.440
+personnalisation du lecteur intégré iframe,
+
+00:00:43.440 --> 00:00:45.680
+qui est notre méthode recommandée
+
+00:00:45.680 --> 00:00:48.559
+pour intégrer des vidéos sur des pages Web.
+
+00:00:48.559 --> 00:00:50.320
+Nous allons nous concentrer spécifiquement sur les
+
+00:00:50.320 --> 00:00:53.320
+options les plus pertinentes pour les
+
+00:00:53.320 --> 00:00:56.120
+navigateurs Web de bureau. Beaucoup de ces
+
+00:00:56.120 --> 00:00:57.840
+options de personnalisation dont nous parlerons
+
+00:00:57.840 --> 00:01:00.559
+ont un effet sur la
+
+00:01:00.559 --> 00:01:02.800
+lecture sur navigateur mobile, mais ce n'est pas le cas de toutes.
+
+00:01:02.800 --> 00:01:04.119
+Nous allons nous concentrer
+
+00:01:04.119 --> 00:01:06.720
+aujourd'hui sur la manière dont ces options affectent
+
+00:01:06.720 --> 00:01:08.799
+la lecture sur ordinateur. Une autre chose que
+
+00:01:08.799 --> 00:01:10.920
+nous n'aborderons pas aujourd'hui est l'
+
+00:01:10.920 --> 00:01:13.799
+utilisation de l'API JavaScript pour contrôler
+
+00:01:13.799 --> 00:01:15.720
+la lecture.  euh c'est évidemment un
+
+00:01:15.720 --> 00:01:17.200
+sujet très intéressant et un sujet très important
+
+00:01:17.200 --> 00:01:18.479
+c'est juste un peu en dehors du
+
+00:01:18.479 --> 00:01:20.920
+cadre de ce dont nous voulions parler donc
+
+00:01:20.920 --> 00:01:22.479
+euh nous n'allons pas couvrir les
+
+00:01:22.479 --> 00:01:24.000
+méthodes que vous pourriez utiliser en
+
+00:01:24.000 --> 00:01:25.799
+JavaScript pour démarrer la lecture ou contrôler
+
+00:01:25.799 --> 00:01:28.960
+la lecture ou récupérer les événements de réception lorsque
+
+00:01:28.960 --> 00:01:31.280
+la lecture change dans le lecteur euh ce que
+
+00:01:31.280 --> 00:01:33.560
+nous allons couvrir sont des choses qui sont
+
+00:01:33.560 --> 00:01:36.000
+couvertes dans la documentation sur
+
+00:01:36.000 --> 00:01:38.079
+la page spécifique donc si nous la
+
+00:01:38.079 --> 00:01:41.560
+récupérons euh nous partagerons cela avec vous et euh
+
+00:01:41.560 --> 00:01:44.479
+pendant que je parcoure cette démo, une grande partie de
+
+00:01:44.479 --> 00:01:45.880
+ce que je vais couvrir fait référence à des
+
+00:01:45.880 --> 00:01:48.439
+pages Web spécifiques euh quand nous reviendrons
+
+00:01:48.439 --> 00:01:50.240
+et publierons cette vidéo sur YouTube, j'aurai
+
+00:01:50.240 --> 00:01:52.040
+des annotations reliant toutes les pages Web
+
+00:01:52.040 --> 00:01:53.680
+afin que vous puissiez y aller et les vérifier vous-
+
+00:01:55.799 --> 00:01:58.960
+même donc c'est notre principal
+
+00:01:58.960 --> 00:02:01.159
+point de départ pour parler de la
+
+00:02:01.159 --> 00:02:03.039
+personnalisation que vous pourriez faire au
+
+00:02:03.039 --> 00:02:06.799
+lecteur iframe intégré de YouTube et euh
+
+00:02:06.799 --> 00:02:09.520
+vous pouvez y accéder à partir de vous savez notre documentation principale
+
+00:02:09.520 --> 00:02:11.680
+developers.google.com youout
+
+00:02:13.720 --> 00:02:16.879
+et tout dans cette section de paramètres
+
+00:02:16.879 --> 00:02:18.440
+dans les documents est un jeu équitable de ce dont nous
+
+00:02:18.440 --> 00:02:21.239
+allons parler maintenant euh une autre
+
+00:02:21.239 --> 00:02:23.200
+chose avant  En fait,
+
+00:02:23.200 --> 00:02:25.440
+j'explique ces paramètres, c'est-
+
+00:02:25.440 --> 00:02:26.760
+à-dire les deux différentes
+
+00:02:26.760 --> 00:02:29.800
+manières de charger le
+
+00:02:29.800 --> 00:02:33.360
+lecteur iframe compeed sur votre page Web.
+
+00:02:33.360 --> 00:02:35.040
+Nous sommes plutôt agnostiques quant à la manière dont
+
+00:02:35.040 --> 00:02:36.440
+vous le chargez. Ces paramètres se
+
+00:02:36.440 --> 00:02:38.480
+comporteront de la même manière,
+
+00:02:38.480 --> 00:02:39.599
+mais je tiens simplement à souligner qu'il
+
+00:02:39.599 --> 00:02:42.440
+existe deux manières différentes de le faire.
+
+00:02:42.440 --> 00:02:47.080
+La première consiste à utiliser les iframes, un
+
+00:02:47.080 --> 00:02:49.840
+peu comme le constructeur du lecteur YouTube YT,
+
+00:02:49.840 --> 00:02:51.440
+et c'est une
+
+00:02:51.440 --> 00:02:53.640
+manière plus programmatique de charger le
+
+00:02:53.640 --> 00:02:55.519
+lecteur iframe sur votre page Web. J'ai donc ce
+
+00:02:55.519 --> 00:02:57.319
+fichier JS ici qui
+
+00:02:57.319 --> 00:02:59.840
+montre à quoi cela ressemblerait.
+
+00:02:59.840 --> 00:03:01.480
+Il s'agit essentiellement de charger
+
+00:03:01.480 --> 00:03:04.799
+cette API JavaScript, d'appeler le
+
+00:03:04.799 --> 00:03:07.599
+constructeur du lecteur YT et de transmettre l'ID
+
+00:03:07.599 --> 00:03:10.799
+d'un div présent sur votre page. Vous
+
+00:03:10.799 --> 00:03:13.200
+verrez ici qu'il y a cette section de barres de lecteur
+
+00:03:13.200 --> 00:03:15.239
+que vous pouvez transmettre au
+
+00:03:15.239 --> 00:03:16.959
+constructeur du lecteur YT. C'est ici que vous
+
+00:03:16.959 --> 00:03:19.319
+pouvez spécifier toutes les options que
+
+00:03:19.319 --> 00:03:20.599
+nous allons aborder aujourd'hui. Si
+
+00:03:20.599 --> 00:03:22.920
+vous utilisez le constructeur du lecteur YT,
+
+00:03:22.920 --> 00:03:25.680
+passez rapidement à
+
+00:03:25.680 --> 00:03:28.360
+ce sujet.  où j'ai volé ce code de euh
+
+00:03:28.360 --> 00:03:30.680
+dans notre guide de démarrage pour l'
+
+00:03:30.680 --> 00:03:33.560
+iframe um API nous parlons de comment vous
+
+00:03:33.560 --> 00:03:37.080
+pourriez réellement obtenir ce code alors n'hésitez pas
+
+00:03:37.080 --> 00:03:38.400
+à emprunter de là ou de ce
+
+00:03:38.400 --> 00:03:40.879
+fiddle JS euh la deuxième façon de
+
+00:03:40.879 --> 00:03:42.400
+charger le lecteur iframe sur votre page est
+
+00:03:42.400 --> 00:03:44.920
+simplement avec une simple balise iframe euh que
+
+00:03:44.920 --> 00:03:47.760
+vous pouvez ajouter à n'importe quelle page Web et euh
+
+00:03:47.760 --> 00:03:49.680
+cela a le même genre de paramètres
+
+00:03:49.680 --> 00:03:51.360
+que le constructeur du lecteur YT est en quelque
+
+00:03:51.360 --> 00:03:53.079
+sorte sous le capot ils finissent vraiment par
+
+00:03:53.079 --> 00:03:55.239
+créer la même chose juste que le
+
+00:03:55.239 --> 00:03:57.720
+constructeur du lecteur YT est une façon programmatique
+
+00:03:57.720 --> 00:03:59.879
+de créer cette balise en utilisant
+
+00:03:59.879 --> 00:04:01.519
+JavaScript c'est si vous
+
+00:04:01.519 --> 00:04:03.920
+écrivez simplement vous savez un modèle HTML ou
+
+00:04:03.920 --> 00:04:05.599
+vous savez même si vous n'êtes pas
+
+00:04:05.599 --> 00:04:06.959
+du tout un programmeur JavaScript et que vous voulez juste
+
+00:04:06.959 --> 00:04:09.879
+inclure du HTML sur votre page, vous pouvez
+
+00:04:09.879 --> 00:04:13.799
+utiliser cette balise euh et les mêmes paramètres
+
+00:04:13.799 --> 00:04:15.640
+dont nous allons parler peuvent
+
+00:04:15.640 --> 00:04:17.680
+aller tout à la fin de l'URL que vous
+
+00:04:17.680 --> 00:04:21.040
+utilisez comme source de la balise iframe donc
+
+00:04:21.040 --> 00:04:22.800
+ici nous avons autoplay égal à z et
+
+00:04:22.800 --> 00:04:25.960
+controls égal à 0 et euh vous savez que cela
+
+00:04:25.960 --> 00:04:27.560
+correspond à ce que nous voyons
+
+00:04:27.560 --> 00:04:30.440
+ici pour le lecteur
+
+00:04:30.440 --> 00:04:31.639
+La
+
+00:04:31.639 --> 00:04:35.479
+documentation pour l'utilisation de cette
+
+00:04:35.479 --> 00:04:40.080
+balise iframe se trouve ici. Si vous regardez
+
+00:04:40.080 --> 00:04:43.000
+dans « do », nous donnons quelques
+
+00:04:43.000 --> 00:04:45.800
+exemples, ce qui constitue les règles de base
+
+00:04:45.800 --> 00:04:47.840
+pour l'utilisation de
+
+00:04:47.840 --> 00:04:49.039
+ces paramètres que nous allons
+
+00:04:49.039 --> 00:04:51.000
+décrire dans votre propre
+
+00:04:51.000 --> 00:04:53.680
+code. Je voulais donc parcourir
+
+00:04:53.680 --> 00:04:55.440
+tous ces paramètres depuis le début. Nous
+
+00:04:55.440 --> 00:04:57.919
+avons de très
+
+00:04:57.919 --> 00:05:00.560
+bonnes explications sur leur signification dans
+
+00:05:00.560 --> 00:05:03.280
+la documentation. Ce sera donc un
+
+00:05:03.280 --> 00:05:05.720
+peu répétitif dans certains cas,
+
+00:05:05.720 --> 00:05:07.120
+mais je voulais souligner certains
+
+00:05:07.120 --> 00:05:09.720
+paramètres spécifiques qui sont les plus utiles. La fonction «
+
+00:05:09.720 --> 00:05:12.680
+autohide » est très pratique. C'est
+
+00:05:12.680 --> 00:05:15.600
+quelque chose qui contrôle
+
+00:05:15.600 --> 00:05:19.919
+plus ou moins le comportement des commandes
+
+00:05:19.919 --> 00:05:21.319
+situées en bas du
+
+00:05:21.319 --> 00:05:24.560
+lecteur YouTube. Ce n'est pas nécessairement
+
+00:05:24.560 --> 00:05:26.720
+l'état initial des commandes, mais
+
+00:05:26.720 --> 00:05:27.919
+cela ressemble plus à ce qui arrive aux
+
+00:05:27.919 --> 00:05:30.520
+commandes une fois la lecture démarrée.
+
+00:05:30.520 --> 00:05:33.199
+Je vais vous montrer comment
+
+00:05:33.199 --> 00:05:35.639
+définir ces différentes valeurs en
+
+00:05:35.639 --> 00:05:37.639
+allant sur cette page, qui est
+
+00:05:37.639 --> 00:05:40.720
+notre démo du lecteur YouTube. C'est
+
+00:05:40.720 --> 00:05:42.639
+une autre excellente ressource, une
+
+00:05:42.639 --> 00:05:45.080
+alternative à l'
+
+00:05:45.080 --> 00:05:47.560
+écriture de ce code.  ici ou en écrivant
+
+00:05:47.560 --> 00:05:49.400
+ceci dans jsfiddle, c'est juste un moyen de
+
+00:05:49.400 --> 00:05:51.520
+jouer avec ces paramètres dans
+
+00:05:51.520 --> 00:05:55.080
+un environnement en direct et vous pouvez le
+
+00:05:55.080 --> 00:05:57.000
+considérer comme notre explorateur d'API si
+
+00:05:57.000 --> 00:05:59.919
+vous l'avez déjà utilisé pour nos API de données,
+
+00:05:59.919 --> 00:06:02.800
+c'est l'équivalent pour les
+
+00:06:02.800 --> 00:06:06.080
+API de lecteur. Donc, ce que cela vous permet de faire, c'est d'aller
+
+00:06:06.080 --> 00:06:07.560
+ici à droite et de commencer à choisir
+
+00:06:07.560 --> 00:06:09.639
+différentes valeurs pour les paramètres.
+
+00:06:09.639 --> 00:06:10.720
+Je ne vais pas le faire pour
+
+00:06:10.720 --> 00:06:11.960
+chaque paramètre dont nous allons
+
+00:06:11.960 --> 00:06:14.160
+parler, mais juste pour vous montrer comment vous
+
+00:06:14.160 --> 00:06:16.479
+pouvez expérimenter en temps réel sans avoir à
+
+00:06:16.479 --> 00:06:18.880
+écrire de code. Laissez-moi essayer de
+
+00:06:18.880 --> 00:06:21.479
+définir le masquage automatique à zéro. Ici, je
+
+00:06:21.479 --> 00:06:22.800
+vais cliquer sur Mettre à jour le
+
+00:06:22.800 --> 00:06:27.000
+lecteur et une fois que je commence
+
+00:06:27.240 --> 00:06:30.160
+la lecture, vous pouvez voir que c'est une très
+
+00:06:30.160 --> 00:06:32.720
+vieille vidéo. En fait, une partie de ce que je
+
+00:06:32.720 --> 00:06:34.440
+prévois de faire est de remplacer la vidéo par défaut
+
+00:06:34.440 --> 00:06:36.520
+que nous utilisons dans cette démo par cette
+
+00:06:36.520 --> 00:06:38.599
+vidéo. Nous aurons donc une expérience très méta
+
+00:06:38.599 --> 00:06:40.160
+si vous regardez
+
+00:06:40.160 --> 00:06:42.360
+cela pendant que vous êtes sur la page de démonstration en train d'essayer
+
+00:06:42.360 --> 00:06:43.039
+ces
+
+00:06:43.039 --> 00:06:45.639
+paramètres. La principale chose à garder à l'
+
+00:06:45.639 --> 00:06:47.680
+esprit est que les commandes en
+
+00:06:47.680 --> 00:06:49.639
+bas ici n'ont pas disparu
+
+00:06:49.639 --> 00:06:51.960
+pendant la lecture et si je  si nous allions
+
+00:06:51.960 --> 00:06:55.280
+ici et modifiions le masquage automatique sur
+
+00:06:55.280 --> 00:06:57.639
+Un lecteur de mise à jour,
+
+00:06:57.639 --> 00:07:00.879
+cela se charge dans le lecteur
+
+00:07:00.879 --> 00:07:01.960
+avec les
+
+00:07:01.960 --> 00:07:04.280
+paramètres, vous verrez que lorsque je passe la souris
+
+00:07:04.280 --> 00:07:06.000
+sur les commandes sont là lorsque je déplace
+
+00:07:06.000 --> 00:07:09.199
+la souris, les commandes disparaissent donc
+
+00:07:09.199 --> 00:07:11.160
+euh pour vous savez, les expériences où vous
+
+00:07:11.160 --> 00:07:13.759
+voulez peut-être plus une situation de type lean back
+
+00:07:13.759 --> 00:07:14.879
+où les gens ne vont pas
+
+00:07:14.879 --> 00:07:16.160
+interagir avec les commandes ou vous ne
+
+00:07:16.160 --> 00:07:17.520
+voulez pas que les commandes se superposent à la
+
+00:07:17.520 --> 00:07:20.120
+lecture vidéo, c'est un paramètre très utile,
+
+00:07:20.120 --> 00:07:23.120
+euh, la lecture automatique est la prochaine sur la
+
+00:07:23.120 --> 00:07:25.120
+liste par ordre alphabétique euh assez
+
+00:07:25.120 --> 00:07:26.560
+explicite si vous ajoutez le
+
+00:07:26.560 --> 00:07:28.720
+paramètre de lecture automatique, la vidéo
+
+00:07:28.720 --> 00:07:30.879
+commencera à être lue dès que la page
+
+00:07:30.879 --> 00:07:33.400
+ou dès que l'intégration iframe est chargée
+
+00:07:33.400 --> 00:07:37.560
+sur la page euh je vais faire une démonstration rapide de
+
+00:07:37.560 --> 00:07:39.400
+cela ici et cette fois au lieu d'
+
+00:07:39.400 --> 00:07:43.440
+utiliser le lecteur euh genre de page de démonstration du lecteur,
+
+00:07:43.440 --> 00:07:44.879
+je vais utiliser ce fiddle JS
+
+00:07:44.879 --> 00:07:46.680
+que nous avons configuré euh et je vais
+
+00:07:46.680 --> 00:07:48.919
+juste changer la valeur de lecture automatique à un,
+
+00:07:48.919 --> 00:07:51.400
+je vais cliquer sur exécuter et vous pouvez voir
+
+00:07:51.400 --> 00:07:53.680
+ici l'intégration, elle a commencé à jouer
+
+00:07:53.680 --> 00:07:55.960
+dès que la page se charge donc  il y a
+
+00:07:55.960 --> 00:07:57.520
+certains scénarios où c'est utile,
+
+00:07:57.520 --> 00:07:58.840
+d'autres où ce n'est pas le cas, vous
+
+00:07:58.840 --> 00:08:00.759
+devez utiliser votre jugement pour savoir
+
+00:08:00.759 --> 00:08:02.560
+si la lecture automatique est la bonne
+
+00:08:02.560 --> 00:08:03.759
+chose à
+
+00:08:03.759 --> 00:08:07.319
+faire. La politique de chargement des CC est quelque chose qui
+
+00:08:07.319 --> 00:08:09.919
+contrôle si les sous-titres ou les
+
+00:08:09.919 --> 00:08:14.080
+sous-titres sont affichés par défaut. Le
+
+00:08:14.080 --> 00:08:16.280
+comportement par défaut si vous ne
+
+00:08:16.280 --> 00:08:18.520
+définissez rien pour la politique de chargement des CC est que
+
+00:08:18.520 --> 00:08:20.759
+les préférences de l'utilisateur sur
+
+00:08:20.759 --> 00:08:21.960
+YouTube, il y a un moyen de
+
+00:08:21.960 --> 00:08:23.800
+dire si vous voulez des sous-
+
+00:08:23.800 --> 00:08:25.879
+titres ou non.
+
+00:08:25.879 --> 00:08:27.599
+C'est normalement ce qui prend effet si vous
+
+00:08:27.599 --> 00:08:28.919
+avez une vidéo spécifique et que vous savez que
+
+00:08:28.919 --> 00:08:30.400
+vous voulez toujours que les sous-titres soient
+
+00:08:30.400 --> 00:08:33.760
+affichés. Vous pouvez définir la politique de chargement des CC sur
+
+00:08:33.760 --> 00:08:36.599
+une seule couleur, c'est un peu intéressant, ce n'est
+
+00:08:36.599 --> 00:08:40.039
+pas quelque chose que je vois largement utilisé, pas
+
+00:08:40.039 --> 00:08:42.240
+nécessairement, mais il y a des cas
+
+00:08:42.240 --> 00:08:43.640
+où vous pourriez vouloir un peu d'
+
+00:08:43.640 --> 00:08:45.880
+éclat, disons dans votre lecteur, et
+
+00:08:45.880 --> 00:08:49.720
+vous ne voulez pas du comportement par défaut.
+
+00:08:49.720 --> 00:08:52.560
+Je vais donc aller très rapidement sur la page de démonstration du lecteur
+
+00:08:52.560 --> 00:08:53.839
+et vous montrer
+
+00:08:53.839 --> 00:08:57.720
+ce qu'il fait. Vous pouvez définir la couleur sur blanc
+
+00:08:57.720 --> 00:09:02.360
+au lieu de rouge et mettre à jour le  Les
+
+00:09:03.519 --> 00:09:05.959
+commandes du lecteur devraient être légèrement
+
+00:09:05.959 --> 00:09:07.360
+différentes selon qu'elles sont
+
+00:09:07.360 --> 00:09:09.800
+rouges ou blanches, donc cela
+
+00:09:09.800 --> 00:09:12.240
+change simplement un peu la marque du
+
+00:09:12.240 --> 00:09:14.560
+lecteur. Vous savez, ce n'est pas forcément la
+
+00:09:14.560 --> 00:09:15.720
+chose la plus utile au monde, mais cela
+
+00:09:15.720 --> 00:09:17.399
+vous donne un peu plus de
+
+00:09:17.399 --> 00:09:20.399
+contrôle. En parlant de contrôle, l'élément suivant
+
+00:09:20.399 --> 00:09:23.480
+par ordre alphabétique est les commandes, et c'est en
+
+00:09:23.480 --> 00:09:26.920
+fait assez utile. Il y a des cas
+
+00:09:26.920 --> 00:09:29.279
+où vous pourriez réellement voir de nombreux
+
+00:09:29.279 --> 00:09:31.279
+avantages en termes de performances en changeant cette
+
+00:09:31.279 --> 00:09:36.079
+valeur par défaut à une
+
+00:09:36.079 --> 00:09:38.640
+option spécifique qui est deux. Nous avons une note dans la
+
+00:09:38.640 --> 00:09:40.320
+documentation expliquant plus en détail ce que
+
+00:09:40.320 --> 00:09:43.360
+cela fait et si vous lisez la
+
+00:09:43.360 --> 00:09:45.480
+note, elle dit que les commandes 2 peuvent
+
+00:09:45.480 --> 00:09:47.839
+vous donner une amélioration des performances par rapport au
+
+00:09:47.839 --> 00:09:50.480
+comportement par défaut. La raison en est que les
+
+00:09:50.480 --> 00:09:53.160
+commandes 2 ont en quelque sorte un
+
+00:09:53.160 --> 00:09:55.120
+moyen de charger le lecteur intégré IFR
+
+00:09:55.120 --> 00:09:58.200
+qui n'initialise pas le
+
+00:09:58.200 --> 00:10:01.120
+lecteur Flash sous-jacent par défaut. Il
+
+00:10:01.120 --> 00:10:03.399
+ne l'initialise pas tant que vous n'avez pas
+
+00:10:03.399 --> 00:10:05.839
+cliqué sur la miniature de la vidéo pour démarrer
+
+00:10:05.839 --> 00:10:09.399
+la lecture. Cela ne
+
+00:10:09.399 --> 00:10:12.120
+s'applique évidemment qu'aux lectures qui impliquent
+
+00:10:12.120 --> 00:10:14.839
+Flash Player. Le lecteur iframe peut
+
+00:10:14.839 --> 00:10:16.600
+décider que la vidéo HTML 5 va être
+
+00:10:16.600 --> 00:10:18.240
+utilisée à la place, auquel cas ce n'est pas
+
+00:10:18.240 --> 00:10:20.200
+aussi important, mais  Dans les situations où la
+
+00:10:20.200 --> 00:10:21.920
+lecture Flash est utilisée, vous pourriez
+
+00:10:21.920 --> 00:10:23.720
+vraiment voir un avantage significatif en termes de performances en
+
+00:10:23.720 --> 00:10:26.800
+définissant également des contrôles et
+
+00:10:26.800 --> 00:10:29.279
+cela pourrait être la valeur par défaut que nous utiliserons à
+
+00:10:29.279 --> 00:10:30.760
+un moment donné dans le futur, comme mentionné
+
+00:10:30.760 --> 00:10:33.120
+ici, dès que certains problèmes d'interface utilisateur seront
+
+00:10:33.120 --> 00:10:35.279
+résolus. Je vais vous donner
+
+00:10:35.279 --> 00:10:37.560
+un exemple de la façon dont vous pourriez voir cet
+
+00:10:37.560 --> 00:10:40.120
+avantage en termes de performances. Cela se produit principalement
+
+00:10:40.120 --> 00:10:42.920
+lorsque vous avez, disons, je ne
+
+00:10:42.920 --> 00:10:44.240
+veux pas dire de nombre spécifique, mais si vous
+
+00:10:44.240 --> 00:10:45.839
+avez plusieurs intégrations IIRM sur la même
+
+00:10:45.839 --> 00:10:49.440
+page, celle-ci ici en a, je pense qu'il
+
+00:10:49.440 --> 00:10:50.839
+pourrait y en avoir 50 du
+
+00:10:50.839 --> 00:10:52.839
+canal des développeurs Google. La première chose
+
+00:10:52.839 --> 00:10:55.600
+que nous allons examiner est le comportement.
+
+00:10:55.600 --> 00:10:57.480
+Par
+
+00:10:57.480 --> 00:11:00.000
+défaut, lorsqu'il y a un contrôle, ou si
+
+00:11:00.000 --> 00:11:02.760
+vous omettez des contrôles, c'est une valeur par défaut
+
+00:11:02.760 --> 00:11:06.800
+et je peux prendre un certain temps pour que ces
+
+00:11:06.800 --> 00:11:09.279
+lecteurs Flash sous-jacents
+
+00:11:09.279 --> 00:11:11.639
+s'initialisent tous et vous savez, cela peut ajouter une certaine
+
+00:11:11.639 --> 00:11:13.800
+latence au point où vous savez que les
+
+00:11:13.800 --> 00:11:15.120
+éléments semblent prêts à être utilisés
+
+00:11:15.120 --> 00:11:18.480
+sur la page, donc ce n'est pas
+
+00:11:18.480 --> 00:11:20.440
+nécessairement la meilleure expérience utilisateur.
+
+00:11:20.440 --> 00:11:21.560
+Si vous prenez la même chose et que vous
+
+00:11:21.560 --> 00:11:24.040
+la changez explicitement en contrôles égaux à deux,
+
+00:11:24.040 --> 00:11:26.120
+vous devriez voir une bien
+
+00:11:26.120 --> 00:11:29.040
+meilleure performance.  c'est assez remarquable en
+
+00:11:29.040 --> 00:11:31.839
+fait euh donc ce qui se passe c'est que vous
+
+00:11:31.839 --> 00:11:33.399
+savez encore une fois ça charge juste ces
+
+00:11:33.399 --> 00:11:35.839
+vignettes ça n'initialise pas
+
+00:11:35.839 --> 00:11:39.040
+Flash Player pour chaque vidéo et euh vous
+
+00:11:39.040 --> 00:11:41.320
+savez que vous auriez pu Je ne veux pas dire que
+
+00:11:41.320 --> 00:11:42.760
+vous devriez mettre des milliers d'intégrations sur
+
+00:11:42.760 --> 00:11:44.480
+la même page mais si vous
+
+00:11:44.480 --> 00:11:46.240
+avez un grand nombre d'intégrations sur la
+
+00:11:46.240 --> 00:11:48.320
+page vous verrez une
+
+00:11:48.320 --> 00:11:50.320
+différence donc très important de garder
+
+00:11:50.320 --> 00:11:51.360
+ça à l'
+
+00:11:51.360 --> 00:11:53.600
+esprit euh quelques autres paramètres qui
+
+00:11:53.600 --> 00:11:56.639
+ne sont pas nécessairement aussi intéressants il y a euh la
+
+00:11:56.639 --> 00:11:59.600
+prise en charge du clavier euh pour le
+
+00:11:59.600 --> 00:12:01.760
+lecteur de script d'action Je ne sais pas vraiment pourquoi
+
+00:12:01.760 --> 00:12:03.480
+vous voudriez désactiver cela euh Je pense que
+
+00:12:03.480 --> 00:12:04.880
+c'est en fait plutôt sympa de le garder activé
+
+00:12:04.880 --> 00:12:06.800
+mais nous avons la possibilité de le
+
+00:12:06.800 --> 00:12:08.040
+désactiver si vous le
+
+00:12:08.040 --> 00:12:10.320
+souhaitez euh ce paramètre particulier est
+
+00:12:10.320 --> 00:12:14.600
+assez important euh l'activation de l'API JS et
+
+00:12:14.600 --> 00:12:17.519
+ce qu'il vous permet de faire est de vous assurer que vous
+
+00:12:17.519 --> 00:12:20.440
+êtes en mesure de communiquer avec le lecteur iframe sur
+
+00:12:20.440 --> 00:12:23.199
+la page en utilisant l'API JavaScript donc comme
+
+00:12:23.199 --> 00:12:24.399
+je l'ai mentionné nous n'allons pas vraiment
+
+00:12:24.399 --> 00:12:26.120
+couvrir quoi que ce soit sur l'
+
+00:12:26.120 --> 00:12:28.360
+API JavaScript dans cette
+
+00:12:28.360 --> 00:12:30.360
+session particulière mais mais beaucoup de gens l'ont Ed
+
+00:12:30.360 --> 00:12:33.399
+et euh le seul cas où vous en avez vraiment
+
+00:12:33.399 --> 00:12:34.720
+besoin  pour être sûr que vous
+
+00:12:34.720 --> 00:12:36.920
+définissez explicitement cela, c'est lorsque vous écrivez la
+
+00:12:36.920 --> 00:12:39.360
+balise iframe directement sur la
+
+00:12:39.360 --> 00:12:42.360
+page, donc
+
+00:12:42.360 --> 00:12:45.639
+un peu comme ça, parce que lorsque vous
+
+00:12:45.639 --> 00:12:48.639
+utilisez le constructeur du lecteur YT, il
+
+00:12:48.639 --> 00:12:50.399
+sera pratiquement défini automatiquement
+
+00:12:50.399 --> 00:12:53.360
+pour vous par défaut, simplement parce que du
+
+00:12:53.360 --> 00:12:54.560
+fait que vous utilisez
+
+00:12:54.560 --> 00:12:56.079
+JavaScript pour initialiser le lecteur, il y a de fortes
+
+00:12:56.079 --> 00:12:57.279
+chances que vous souhaitiez communiquer
+
+00:12:57.279 --> 00:12:59.279
+avec le lecteur avec JavaScript afin qu'il soit
+
+00:12:59.279 --> 00:13:00.760
+toujours configuré pour vous, mais ce n'est pas
+
+00:13:00.760 --> 00:13:02.880
+le cas si vous écrivez explicitement
+
+00:13:02.880 --> 00:13:05.279
+une balise iframe sur une page, vous
+
+00:13:05.279 --> 00:13:06.880
+devez donc vraiment vous assurer que vous avez
+
+00:13:06.880 --> 00:13:10.880
+activé l'API JSI ​​JS définie sur un et c'est
+
+00:13:10.880 --> 00:13:15.839
+nécessaire pour communiquer avec le
+
+00:13:16.160 --> 00:13:19.360
+lecteur iframe, la balise de fin et vous savez, un
+
+00:13:19.360 --> 00:13:21.360
+peu plus bas dans l'alphabet, c'est
+
+00:13:21.360 --> 00:13:23.160
+start, donc ce sont deux
+
+00:13:23.160 --> 00:13:26.160
+balises correspondantes, cela vous donne un moyen très simple
+
+00:13:26.160 --> 00:13:27.760
+de mettre un lit sur une page qui a
+
+00:13:27.760 --> 00:13:29.320
+cette heure de fin personnalisée
+
+00:13:29.320 --> 00:13:31.639
+et une heure de début personnalisée, donc vous savez que
+
+00:13:31.639 --> 00:13:33.680
+si vous avez une vidéo de 3 minutes et que vous
+
+00:13:33.680 --> 00:13:35.880
+voulez vraiment intégrer 30 secondes au
+
+00:13:35.880 --> 00:13:37.760
+milieu de la vidéo, vous pouvez utiliser ces
+
+00:13:37.760 --> 00:13:39.639
+deux balises pour le faire  dès qu'il atteint
+
+00:13:39.639 --> 00:13:42.399
+la fin la lecture atteint la balise de fin euh la
+
+00:13:42.399 --> 00:13:45.760
+lecture s'arrêtera effectivement donc cela
+
+00:13:45.760 --> 00:13:49.240
+pourrait être utile euh le paramètre FS n'est plus
+
+00:13:49.240 --> 00:13:51.920
+très utile vous permet essentiellement de
+
+00:13:51.920 --> 00:13:54.360
+contrôler s'il y a un bouton plein écran
+
+00:13:54.360 --> 00:13:56.759
+sur le script d'action trois joueurs
+
+00:13:56.759 --> 00:13:58.759
+mais je ne pense pas que cela ait d'effet sur le
+
+00:13:58.759 --> 00:14:01.639
+lecteur HML 5 donc je ne vois pas vraiment pourquoi vous
+
+00:14:01.639 --> 00:14:05.880
+voudriez changer cela la politique de chargement IV
+
+00:14:05.880 --> 00:14:07.839
+est quelque chose qui contrôle si euh je
+
+00:14:07.839 --> 00:14:10.279
+suppose que les annotations vidéo interactives euh
+
+00:14:10.279 --> 00:14:12.920
+est faute d'une meilleure façon de
+
+00:14:12.920 --> 00:14:14.560
+le décrire est affichée sur votre vidéo par
+
+00:14:14.560 --> 00:14:17.320
+défaut euh donc il y a quelques
+
+00:14:17.320 --> 00:14:18.920
+valeurs différentes ici c'est une ou
+
+00:14:18.920 --> 00:14:21.600
+trois euh essentiellement le définir un
+
+00:14:21.600 --> 00:14:23.040
+s'assurera que ces annotations
+
+00:14:23.040 --> 00:14:24.519
+sont affichées l'envoyer à trois
+
+00:14:24.519 --> 00:14:26.199
+s'assurera qu'elles ne sont pas affichées par défaut
+
+00:14:26.199 --> 00:14:28.360
+mais à tout moment l'utilisateur peut modifier le
+
+00:14:28.360 --> 00:14:29.240
+paramètre
+
+00:14:29.240 --> 00:14:31.079
+explicitement dans le lecteur s'il veut
+
+00:14:31.079 --> 00:14:33.399
+afficher ou masquer les
+
+00:14:33.399 --> 00:14:35.240
+annotations euh la liste est vraiment
+
+00:14:35.240 --> 00:14:37.279
+intéressante et il y a pas mal de choses
+
+00:14:37.279 --> 00:14:39.440
+à dire sur la liste donc je vais en fait m'en
+
+00:14:39.440 --> 00:14:42.519
+remettre à ce stade à un
+
+00:14:42.519 --> 00:14:44.800
+article de blog entier que nous avons rédigé euh pour
+
+00:14:44.800 --> 00:14:48.480
+parler des différents types de valeurs
+
+00:14:48.480 --> 00:14:50.480
+que le paramètre de liste  et le
+
+00:14:50.480 --> 00:14:52.720
+paramètre de type de liste qui est un
+
+00:14:52.720 --> 00:14:54.839
+paramètre associé peut prendre uh je vais créer un lien vers cet
+
+00:14:54.839 --> 00:14:56.680
+article de blog dans une annotation vidéo afin que vous
+
+00:14:56.680 --> 00:14:59.160
+puissiez le lire plus en détail mais en
+
+00:14:59.160 --> 00:15:00.399
+résumé, c'est un
+
+00:15:00.399 --> 00:15:03.000
+moyen très simple de prendre un simple
+
+00:15:03.000 --> 00:15:05.680
+lecteur intégré sur votre page et de
+
+00:15:05.680 --> 00:15:08.440
+l'utiliser pour afficher une liste de vidéos sans
+
+00:15:08.440 --> 00:15:10.519
+avoir à coder en dur les identifiants de vidéo à
+
+00:15:10.519 --> 00:15:12.639
+l'avance uh donc vous pourriez avoir un
+
+00:15:12.639 --> 00:15:14.759
+lecteur spécifique sur votre page et dire que vous
+
+00:15:14.759 --> 00:15:16.680
+savez lire les vidéos les plus récentes
+
+00:15:16.680 --> 00:15:19.399
+d'une chaîne YouTube spécifique ou d'une
+
+00:15:19.399 --> 00:15:22.880
+playlist spécifique ou d'un terme de recherche spécifique uh
+
+00:15:22.880 --> 00:15:24.800
+même si vous pourriez dire que vous savez que
+
+00:15:24.800 --> 00:15:27.040
+c'est un lecteur intégré qui affichera les
+
+00:15:27.040 --> 00:15:29.360
+dernières vidéos qui correspondent au terme de recherche
+
+00:15:29.360 --> 00:15:32.560
+API YouTube quelque chose dans ce genre
+
+00:15:32.560 --> 00:15:35.040
+uh c'est assez utile je ne pense pas que
+
+00:15:35.040 --> 00:15:36.360
+beaucoup de gens le savent comme ils le devraient
+
+00:15:36.360 --> 00:15:38.199
+donc j'espère que les gens regarderont cela et
+
+00:15:38.199 --> 00:15:40.560
+commenceront à l'utiliser un peu plus uh le
+
+00:15:40.560 --> 00:15:43.360
+type de liste va de pair et avec le
+
+00:15:43.360 --> 00:15:46.399
+paramètre de liste il y a un paramètre de boucle et
+
+00:15:46.399 --> 00:15:49.519
+le paramètre de boucle uh comme expliqué
+
+00:15:49.519 --> 00:15:52.279
+dans la documentation vous permettra de
+
+00:15:52.279 --> 00:15:54.240
+redémarrer automatiquement la lecture d'une
+
+00:15:54.240 --> 00:15:57.639
+vidéo euh lorsque la lecture est terminée, vous
+
+00:15:57.639 --> 00:15:58.839
+devez en quelque sorte avoir un petit
+
+00:15:58.839 --> 00:16:00.440
+hack si vous essayez de faire cela  pour une
+
+00:16:00.440 --> 00:16:02.120
+seule vidéo où vous créez une playlist
+
+00:16:02.120 --> 00:16:04.399
+qui ne contient qu'une seule entrée vidéo,
+
+00:16:04.399 --> 00:16:07.040
+nous avons donc un peu plus d'informations là-bas, une
+
+00:16:07.040 --> 00:16:08.480
+marque modeste est quelque chose qui est
+
+00:16:08.480 --> 00:16:10.519
+couvert dans un autre article de blog auquel
+
+00:16:10.519 --> 00:16:13.040
+nous ferons également un lien à partir de l'annotation
+
+00:16:13.040 --> 00:16:15.519
+et il parle de l'option ici en
+
+00:16:15.519 --> 00:16:18.560
+bas euh ce n'est pas exactement un
+
+00:16:18.560 --> 00:16:21.160
+lecteur de liste de logo complet euh vous savez qu'il y
+
+00:16:21.160 --> 00:16:24.360
+a toujours un logo YouTube impliqué euh qui
+
+00:16:24.360 --> 00:16:25.959
+s'affiche je pense sur l'écran de pause dans le
+
+00:16:25.959 --> 00:16:28.160
+coin supérieur droit ou dans l'écran de file d'attente
+
+00:16:29.279 --> 00:16:31.160
+mais c'est un paramètre que vous pouvez
+
+00:16:31.160 --> 00:16:34.120
+définir pour atténuer la
+
+00:16:34.120 --> 00:16:37.839
+marque YouTube sur le lecteur et euh c'est
+
+00:16:37.839 --> 00:16:39.519
+quelque chose que vous voudrez peut-être garder à l'
+
+00:16:39.519 --> 00:16:42.079
+esprit si vous savez que vous avez un scénario
+
+00:16:42.079 --> 00:16:43.680
+où vous voulez intégrer mais que vous ne voulez pas le
+
+00:16:43.680 --> 00:16:46.160
+rendre entièrement
+
+00:16:46.160 --> 00:16:49.480
+YouTuber le paramètre d'origine est euh
+
+00:16:49.480 --> 00:16:52.839
+quelque chose qui peut être utilisé lorsque vous
+
+00:16:52.839 --> 00:16:55.160
+utilisez la balise d'intégration iframe et que vous
+
+00:16:55.160 --> 00:16:58.120
+allez interagir avec euh l'
+
+00:16:58.120 --> 00:17:00.399
+intégration iframe en utilisant JavaScript donc comme
+
+00:17:00.399 --> 00:17:01.880
+mentionné précédemment, vous voudrez peut-être
+
+00:17:01.880 --> 00:17:04.919
+mettre explicitement l'API JS activée vous
+
+00:17:04.919 --> 00:17:06.839
+voudrez peut-être aussi mettre le
+
+00:17:06.839 --> 00:17:09.079
+paramètre d'origine ici et le définir égal
+
+00:17:09.079 --> 00:17:12.919
+à l'URL complète pour  votre page Web, et
+
+00:17:12.919 --> 00:17:15.319
+c'est une sorte de mécanisme de sécurité
+
+00:17:15.319 --> 00:17:18.319
+pour s'assurer que seul le JavaScript
+
+00:17:18.319 --> 00:17:20.559
+exécuté à partir de votre page Web hôte est capable de
+
+00:17:20.559 --> 00:17:23.880
+communiquer avec le lecteur et si vous
+
+00:17:23.880 --> 00:17:25.959
+utilisez le constructeur du lecteur YT, il est
+
+00:17:25.959 --> 00:17:27.439
+défini automatiquement pour vous, c'est donc
+
+00:17:27.439 --> 00:17:29.320
+un autre cas où vous n'avez vraiment à vous
+
+00:17:29.320 --> 00:17:31.280
+soucier de cela que lorsque vous
+
+00:17:31.280 --> 00:17:33.600
+écrivez explicitement une
+
+00:17:33.600 --> 00:17:36.440
+balise iframe et parfois, les gens rencontrent
+
+00:17:36.440 --> 00:17:38.520
+des problèmes où ils sont censés utiliser
+
+00:17:38.520 --> 00:17:40.720
+la balise iame et ils essaient de
+
+00:17:40.720 --> 00:17:43.240
+lui parler en utilisant JavaScript mais leur code ne
+
+00:17:43.240 --> 00:17:46.240
+fonctionne tout simplement pas. Une chose à déboguer
+
+00:17:46.240 --> 00:17:47.799
+dans ce cas est de vérifier si vous
+
+00:17:47.799 --> 00:17:49.559
+définissez le paramètre d'origine et si
+
+00:17:49.559 --> 00:17:51.960
+vous l'êtes, assurez-vous qu'il est vraiment défini
+
+00:17:51.960 --> 00:17:55.039
+sur vous connaissez l'URL complète du
+
+00:17:55.039 --> 00:17:57.200
+nom d'hôte de votre
+
+00:17:57.200 --> 00:18:00.480
+site, s'il vous plaît, le piid du lecteur, ce n'est plus
+
+00:18:00.480 --> 00:18:02.320
+vraiment pertinent, c'est plutôt une
+
+00:18:02.320 --> 00:18:04.600
+façon d'utiliser l'ancienne API JavaScript
+
+00:18:04.600 --> 00:18:06.080
+pour identifier votre
+
+00:18:06.080 --> 00:18:08.799
+lecteur. Il y a un paramètre de playlist
+
+00:18:08.799 --> 00:18:10.440
+qui est facilement confondu avec le
+
+00:18:10.440 --> 00:18:12.840
+paramètre de liste et c'est quelque chose qui
+
+00:18:12.840 --> 00:18:14.080
+prend en fait un ensemble de
+
+00:18:14.080 --> 00:18:16.520
+valeurs différent et le paramètre de playlist prend
+
+00:18:16.520 --> 00:18:19.039
+une liste d'identifiants vidéo. Donc, cela n'a
+
+00:18:19.039 --> 00:18:20.440
+pas besoin d'être  une vraie playlist qui
+
+00:18:20.440 --> 00:18:22.120
+existe sur YouTube, elle n'a pas besoin d'
+
+00:18:22.120 --> 00:18:25.840
+être quelque chose qui, euh, vous savez, est les
+
+00:18:25.840 --> 00:18:27.880
+téléchargements d'une chaîne spécifique, il pourrait
+
+00:18:27.880 --> 00:18:30.039
+simplement s'agir d'une liste de toutes les idées de vidéos que
+
+00:18:30.039 --> 00:18:32.000
+vous voulez et c'est une sorte de moyen de
+
+00:18:32.000 --> 00:18:34.440
+générer une playlist dynamique à la volée,
+
+00:18:34.440 --> 00:18:37.600
+donc certains cas d'utilisation où cela
+
+00:18:37.600 --> 00:18:40.440
+pourrait être utile euh il y a le vrai
+
+00:18:40.440 --> 00:18:42.840
+paramètre et cela contrôle si
+
+00:18:42.840 --> 00:18:46.080
+l'écran de fin d'une vidéo
+
+00:18:46.080 --> 00:18:49.120
+affichera ou non des vidéos associées euh la plupart des
+
+00:18:49.120 --> 00:18:50.440
+gens savent que
+
+00:18:50.440 --> 00:18:52.440
+lorsque vous atteignez la fin d'une
+
+00:18:52.440 --> 00:18:54.919
+vidéo YouTube, vous verrez vous savez une
+
+00:18:54.919 --> 00:18:56.600
+configuration de vignettes avec des
+
+00:18:56.600 --> 00:18:58.880
+suggestions pour d'autres vidéos à lire euh
+
+00:18:58.880 --> 00:19:00.600
+nous avons la possibilité de désactiver cela
+
+00:19:00.600 --> 00:19:02.640
+si vous sentez que vous ne voulez pas cela sur
+
+00:19:02.640 --> 00:19:04.559
+vos
+
+00:19:04.559 --> 00:19:08.400
+intégrations afficher les informations est quelque chose qui
+
+00:19:08.400 --> 00:19:10.280
+contrôlera ce qui est
+
+00:19:10.280 --> 00:19:13.919
+affiché euh initialement dans l'état en file d'attente
+
+00:19:13.919 --> 00:19:16.880
+euh il y a des moyens de prendre le
+
+00:19:16.880 --> 00:19:18.480
+comportement par défaut et de l'
+
+00:19:18.480 --> 00:19:19.840
+atténuer un peu à nouveau où vous ne voyez pas
+
+00:19:19.840 --> 00:19:23.120
+autant euh avant le début de la vidéo
+
+00:19:23.120 --> 00:19:25.400
+et vous pouvez définir afficher les informations égales à zéro si
+
+00:19:25.400 --> 00:19:27.559
+vous le souhaitez euh afficher les informations sont en fait
+
+00:19:27.559 --> 00:19:29.640
+utilisées dans un autre cas et c'est lorsque
+
+00:19:29.640 --> 00:19:32.520
+vous utilisez la liste  Le lecteur et le paramètre
+
+00:19:32.520 --> 00:19:35.600
+définissent explicitement l'affichage EO égal à un
+
+00:19:35.600 --> 00:19:38.280
+pour qu'il y ait une liste de
+
+00:19:38.280 --> 00:19:41.799
+vidéos en file d'attente dans la liste de lecture. Dans votre
+
+00:19:41.799 --> 00:19:43.600
+lecteur de liste, donc si nous regardons ici, c'est
+
+00:19:43.600 --> 00:19:46.919
+un cas où l'affichage des informations est défini sur un.
+
+00:19:46.919 --> 00:19:48.440
+Il s'agit d'un lecteur de liste de lecture qui
+
+00:19:48.440 --> 00:19:49.559
+charge tout ce qui vient des
+
+00:19:49.559 --> 00:19:51.360
+développeurs de Google et vous verrez qu'avant même que
+
+00:19:51.360 --> 00:19:53.320
+la lecture ne commence, vous avez cette
+
+00:19:53.320 --> 00:19:55.760
+vignette pratique pour toutes les vidéos qui
+
+00:19:55.760 --> 00:19:57.159
+sont en quelque sorte en file d'attente dans la liste de lecture
+
+00:19:57.159 --> 00:19:59.280
+pour les vidéos suivantes et il vous permet de
+
+00:19:59.280 --> 00:20:01.880
+choisir par quoi vous voulez commencer. C'est donc en
+
+00:20:01.880 --> 00:20:03.679
+fait assez utile pour les
+
+00:20:03.679 --> 00:20:06.960
+scénarios où vous utilisez le
+
+00:20:07.280 --> 00:20:09.880
+paramètre de démarrage du lecteur de liste que nous avons vraiment abordé
+
+00:20:09.880 --> 00:20:13.000
+auparavant, et avec le paramètre de fin
+
+00:20:13.000 --> 00:20:16.080
+et le dernier est un
+
+00:20:16.080 --> 00:20:18.000
+paramètre de thème. C'est quelque chose de similaire
+
+00:20:18.000 --> 00:20:19.559
+au paramètre de couleur précédent qui
+
+00:20:19.559 --> 00:20:22.720
+vous permet simplement de modifier l'
+
+00:20:22.720 --> 00:20:24.679
+apparence par défaut du lecteur et vous donne un certain
+
+00:20:24.679 --> 00:20:28.799
+degré de personnalisation à cet égard. Il y
+
+00:20:28.799 --> 00:20:31.080
+a maintenant quelques
+
+00:20:31.080 --> 00:20:32.919
+paramètres obsolètes.  Je ne vais pas
+
+00:20:32.919 --> 00:20:34.799
+les aborder, ils sont obsolètes pour une raison : nous
+
+00:20:34.799 --> 00:20:36.760
+ne voulons plus que les gens les utilisent. Je
+
+00:20:36.760 --> 00:20:39.320
+voulais souligner qu'il y a
+
+00:20:39.320 --> 00:20:41.400
+parfois, je ne veux pas dire des rumeurs,
+
+00:20:41.400 --> 00:20:43.400
+mais il y a comme certains
+
+00:20:43.400 --> 00:20:45.200
+paramètres que les gens font
+
+00:20:45.200 --> 00:20:46.799
+circuler et disent : Hé, vous savez, vous pouvez utiliser
+
+00:20:46.799 --> 00:20:49.280
+ce paramètre de lecteur pour forcer
+
+00:20:49.280 --> 00:20:52.159
+la lecture HTML 5 ou utiliser ce paramètre de lecteur pour
+
+00:20:52.159 --> 00:20:53.720
+forcer la lecture dans un certain
+
+00:20:53.720 --> 00:20:56.080
+niveau de qualité ou quelque chose du genre.
+
+00:20:56.080 --> 00:20:58.320
+Ceux-ci ne sont pas documentés pour une raison :
+
+00:20:58.320 --> 00:21:00.280
+nous ne voulons vraiment pas que les gens utilisent des
+
+00:21:00.280 --> 00:21:02.240
+paramètres qui ne sont pas explicitement
+
+00:21:02.240 --> 00:21:03.960
+mentionnés dans la documentation, en partie
+
+00:21:03.960 --> 00:21:05.360
+parce que nous ne sommes pas entièrement engagés à
+
+00:21:05.360 --> 00:21:08.159
+les prendre en charge. Ils peuvent parfois
+
+00:21:08.159 --> 00:21:10.679
+fonctionner dans certains cas et ils peuvent cesser de
+
+00:21:10.679 --> 00:21:12.640
+fonctionner à tout moment dans le futur, donc nous ne
+
+00:21:12.640 --> 00:21:14.400
+voulons vraiment pas que les gens construisent des choses
+
+00:21:14.400 --> 00:21:17.480
+qui s'appuient sur ces paramètres.
+
+00:21:17.480 --> 00:21:19.679
+Il y a aussi des cas où vous savez que
+
+00:21:19.679 --> 00:21:23.200
+nous voulons que le contrôle soit entre les mains de
+
+00:21:23.200 --> 00:21:25.720
+la personne qui regarde l'intégration, donc
+
+00:21:25.720 --> 00:21:26.960
+vous savez que nous voulons que le contrôle sur la
+
+00:21:26.960 --> 00:21:30.880
+lecture par défaut soit vraiment entre les mains de la
+
+00:21:30.880 --> 00:21:33.240
+personne qui utilise le navigateur Web et
+
+00:21:33.240 --> 00:21:34.720
+vous savez, Flash pourrait être
+
+00:21:34.720 --> 00:21:38.320
+activé.  La qualité automatique par défaut
+
+00:21:38.320 --> 00:21:41.240
+pour le niveau de qualité donne dans de nombreux
+
+00:21:41.240 --> 00:21:44.039
+cas la meilleure expérience de lecture,
+
+00:21:44.039 --> 00:21:46.760
+donc si vous ne voyez pas quelque chose répertorié
+
+00:21:46.760 --> 00:21:48.440
+comme un paramètre pris en charge, veuillez ne pas l'
+
+00:21:48.440 --> 00:21:51.080
+utiliser et vous savez et si vous
+
+00:21:51.080 --> 00:21:52.600
+trouvez des paramètres, veuillez ne pas vous
+
+00:21:52.600 --> 00:21:54.360
+plaindre s'ils ont une rupture à un
+
+00:21:54.360 --> 00:21:56.559
+moment donné dans le futur. Je suppose que c'est le
+
+00:21:56.559 --> 00:21:58.559
+principal point à retenir
+
+00:21:58.559 --> 00:22:00.159
+qui couvre la liste de tous les
+
+00:22:00.159 --> 00:22:02.279
+paramètres pris en charge. Nous avons eu beaucoup de
+
+00:22:02.279 --> 00:22:04.360
+matériel Web différent ici et assurez-vous
+
+00:22:04.360 --> 00:22:05.679
+de vérifier les annotations sur la
+
+00:22:05.679 --> 00:22:08.159
+vidéo pour les liens vers tout ce que nous avons
+
+00:22:08.159 --> 00:22:11.039
+couvert aujourd'hui. Merci beaucoup d'avoir
+
+00:22:11.039 --> 00:22:13.360
+regardé et nous nous joindrons à nous, nous verrons
+
+00:22:13.360 --> 00:22:16.880
+tout le monde la semaine prochaine. Cordialement
+
